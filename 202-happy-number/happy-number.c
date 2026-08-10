@@ -2,27 +2,27 @@
 
 bool isHappy(int n) {
     int rem;
-    int ncopy = n;
-    int finalsum;
+    int temp = n;
+    int sum;
 
     while (1) { 
-        finalsum = 0;
+        sum = 0;
         
-        while (ncopy != 0) {
-            rem = ncopy % 10;
-            finalsum += (rem * rem);
-            ncopy = ncopy / 10;
+        while (temp != 0) {
+            rem = temp % 10;
+            sum += (rem * rem);
+            temp = temp / 10;
         }
         
-        if (finalsum == 1) {
+        if (sum == 1) {
             return true;
         }
         
-        if (finalsum == 4) {
+        if (sum == 4) {
             return false;
         }
         
-        ncopy = finalsum;
+        temp = sum;
     }
     
     return false;
